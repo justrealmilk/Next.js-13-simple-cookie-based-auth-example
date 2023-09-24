@@ -1,5 +1,5 @@
 export async function getData(cookie?: string) {
-  const response = await fetch("http://localhost:3000/api/", {
+  const response = await fetch("http://localhost:3434/api/", {
     headers: {
       Cookie: cookie !== undefined ? `token=${cookie};` : "",
     },

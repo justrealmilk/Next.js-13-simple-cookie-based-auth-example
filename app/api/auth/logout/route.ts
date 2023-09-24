@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   const seralized = serialize("token", "bye", {
     httpOnly: true,
     secure: true, //process.env.NODE_ENV === "production",
-    domain: "5t23fw-3000.csb.app",
+    domain: request.headers.get("host")!.split(".")[0] + ".csb.app",
     sameSite: "none",
     maxAge: -1,
     path: "/",
